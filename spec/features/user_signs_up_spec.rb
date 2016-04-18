@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "user sign in" do
 
-  it "signs in with correct credentials" do
+  it "signs up with correct credentials" do
     visit root_path
 
     expect(page.status_code).to eq(200)

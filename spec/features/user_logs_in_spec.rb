@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.feature "user log in" do
 
   it "logs in with correct credentials" do
+    User.create(email: "david@example.com", password: "password")
     visit root_path
 
     expect(page.status_code).to eq(200)
