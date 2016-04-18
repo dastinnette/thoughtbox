@@ -14,10 +14,24 @@
   <br>
 
   <h3>all links</h3>
-
-  <% @links.each do |link| %>
-    <%= link.title %>
-    <%= link.url %>
-    <%= link.read %>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>link</th>
+        <th>read?</th>
+        <th>edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @links.each do |link| %>
+      <tr>
+        <th><%= link.title %></th>
+        <th><%= link.url %></th>
+        <th><%= link.read %></th>
+        <th><%= link_to "edit", edit_link_path(link) %></th>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
