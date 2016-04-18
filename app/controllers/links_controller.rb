@@ -6,18 +6,25 @@ class LinksController < ApplicationController
   end
 
   def create
-    link = Link.new(link_params)
-    if link.save
-      current_user.links << link
-      flash[:notice] = "Link was created."
+    @link = Link.new(link_params)
+    if @link.save
+      current_user.links << @link
     else
-      flash[:errors] = "Invalid. Try again."
     end
     redirect_to links_path
   end
 
   def edit
     @link = Link.find(params["id"])
+  end
+
+  def update
+    @link = Link.find(params[:id])
+    if @link.update(link_params)
+      redirect_to links_path
+    else
+      render :edit
+    end
   end
 
   private
