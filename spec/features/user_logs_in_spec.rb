@@ -17,4 +17,19 @@ RSpec.feature "user log in" do
     expect(current_path).to eq(links_path)
   end
 
+  scenario "with incorrect credentials" do
+    create_user
+    visit root_path
+
+    click_on "log in"
+
+    expect(current_path).to eq(login_path)
+
+    fill_in "Email", with: "test@example.com"
+    fill_in "Password", with: "pizza"
+    click_on "enter"
+
+    expect(current_path).to eq(login_path)
+  end
+
 end
