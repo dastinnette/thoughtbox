@@ -9,8 +9,10 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to links_path
+      flash[:success] = "start thinking, #{current_user.email}"
     else
       redirect_to new_user_path
+      flash[:error] = "email is already taken"
     end
   end
 
