@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to links_path
     else
-      flash[:errors] = "invalid log in"
       redirect_to login_path
     end
   end
