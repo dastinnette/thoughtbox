@@ -1,0 +1,26 @@
+<div class="container">
+  <h3>create a new account</h3>
+  <%= form_for(@user) do |f| %>
+
+    <div class="input-field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <div>
+      <%= f.submit "create account" %>
+    </div>
+    
+  <% end  %>
+
+</div>
