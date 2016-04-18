@@ -18,7 +18,6 @@ RSpec.feature "user sign in" do
     fill_in "Password confirmation", with: "password"
     click_on "create account"
 
-    expect(page).to have_content("start thinking, david@example.com")
     expect(current_path).to eq(links_path)
   end
 
