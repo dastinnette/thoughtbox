@@ -31,9 +31,9 @@
         <th><%= link_to "link", link.url %></th>
         <th><%= link.read %></th>
         <% if link.read? %>
-          <th><%= link_to "mark as unread", link_path(link.id, link: {read: false}), method: :put %></th>
+          <th><%= link_to "mark as unread", link_path(link, link: {read: false}), method: :put %></th>
         <% else %>
-          <th><%= link_to "mark as read", link_path(link.id, link: {read: true}), method: :put %></th>
+          <th><%= link_to "mark as read", link_path(link, link: {read: true}), method: :put %></th>
         <% end %>
         <th><%= link_to "edit", edit_link_path(link) %></th>
       </tr>
