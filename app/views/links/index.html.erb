@@ -11,4 +11,12 @@
     <%= f.submit "submit link" %>
   <% end %>
 
+  <br>
+
+  <h3>all links</h3>
+
+  <% @links.each do |link| %>
+    <%= link.title %>
+    <%= link.url %>
+  <% end %>
 </div>
