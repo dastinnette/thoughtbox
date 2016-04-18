@@ -1,3 +1,14 @@
 <div class="container">
-  <h1>thoughtbox - your link storage warehouse</h1>
+  <h3>submit a link</h3>
+  <%= form_for(@link) do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :url %>
+    <%= f.url_field :url %>
+
+    <%= f.submit "submit link" %>
+  <% end %>
+
 </div>
