@@ -10,15 +10,15 @@ RSpec.feature "user sign in" do
 
     click_link("sign up")
 
-    expect(page).to have_content("enter your email address")
+    expect(page).to have_content("create a new account")
     expect(current_path).to eq(new_user_path)
 
-    fill_in "email", with: "david@example.com"
-    fill_in "password", with: "password"
-    fill_in "confirm password", with: "password"
+    fill_in "Email", with: "david@example.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
     click_on "create account"
 
-    expect(page).to have_content("hello, david@example.com")
+    expect(page).to have_content("start thinking, david@example.com")
     expect(current_path).to eq(links_path)
   end
 
