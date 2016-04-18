@@ -17,7 +17,7 @@ RSpec.feature "edit links" do
 
     expect(current_path).to eq(links_path)
     expect(page).to have_content("More sports!")
-    expect(page).to have_content("http://sports.yahoo.com/")
+    expect(page).to have_content("link")
 
     expect(page).to_not have_content(link.title)
     expect(page).to_not have_content(link.url)

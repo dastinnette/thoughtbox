@@ -4,7 +4,7 @@ RSpec.feature "change read status" do
 
   scenario "change unread to read" do
     login_user
-    create_link
+    link = create_link
     visit links_path
 
     expect(page).to have_content "false"
