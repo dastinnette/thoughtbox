@@ -4,7 +4,6 @@ RSpec.feature "create links" do
 
   scenario "logged in user can create links" do
     login_user
-
     visit links_path
 
     fill_in "link_title", with: "Sports!"

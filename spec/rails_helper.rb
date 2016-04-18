@@ -21,6 +21,17 @@ ActiveRecord::Migration.maintain_test_schema!
     click_on "enter"
   end
 
+  def create_link
+    title = "Sports!"
+
+    visit links_path
+
+    fill_in "link_title", with: title
+    fill_in "link_url", with: "http://espn.go.com/"
+    click_button "submit link"
+
+    Link.find_by(title: title)
+  end
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
