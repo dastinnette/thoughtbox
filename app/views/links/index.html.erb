@@ -20,6 +20,7 @@
         <th>title</th>
         <th>link</th>
         <th>read?</th>
+        <th>change status</th>
         <th>edit</th>
       </tr>
     </thead>
@@ -27,8 +28,13 @@
       <% @links.each do |link| %>
       <tr>
         <th><%= link.title %></th>
-        <th><%= link.url %></th>
+        <th><%= link_to "link", link.url %></th>
         <th><%= link.read %></th>
+        <% if link.read? %>
+          <th><%= link_to "mark as unread", link_path(link, link: {read: false}), method: :put %></th>
+        <% else %>
+          <th><%= link_to "mark as read", link_path(link, link: {read: true}), method: :put %></th>
+        <% end %>
         <th><%= link_to "edit", edit_link_path(link) %></th>
       </tr>
       <% end %>
